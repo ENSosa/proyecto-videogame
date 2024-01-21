@@ -1,0 +1,31 @@
+const{DataTypes, Sequelize}=require('sequelize')
+
+module.exports=(sequelize)=>{
+    sequelize.define('Platform',{
+        id:{
+            type:DataTypes.INTEGER,
+            primaryKey:true
+        },
+        name:{
+            type:DataTypes.STRING
+        },
+        slug:{
+            type:DataTypes.STRING
+        },
+        image:{
+            type:DataTypes.STRING
+        },
+        year_end:{
+            type:DataTypes.INTEGER
+        },
+        year_start:{
+            type:DataTypes.INTEGER
+        },
+        games_count:{
+            type:DataTypes.INTEGER
+        },
+        image_background:{
+            type:DataTypes.STRING
+        }
+    })
+}

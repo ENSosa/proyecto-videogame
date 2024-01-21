@@ -1,5 +1,11 @@
 require('dotenv').config();
 const { Sequelize } = require('sequelize');
+const Videogames= require("./models/Videogames")
+const Genres =require("./models/Genres")
+const Platforms=require("./models/Platforms")
+const PlatformGame=require("./models/PlatformGame")
+ 
+
 const fs = require('fs');
 const path = require('path');
 const {
@@ -9,6 +15,11 @@ const {
 const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/videogames`, {
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+  sync: {
+    alter: {
+      drop: false,
+    },
+  },
 });
 const basename = path.basename(__filename);
 
@@ -30,9 +41,17 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { Videogame } = sequelize.models;
+const { Videogames: VideoGamesModel, Genres: GenresModel,PlatformGame:PlatformGameModel,Platform:PlatformsModel} = sequelize.models;
 
 // Aca vendrian las relaciones
+VideoGamesModel.belongsToMany(GenresModel, { through: 'VideogamesGenres', as: 'Genres' });
+GenresModel.belongsToMany(VideoGamesModel, { through: 'VideogamesGenres', as: 'Videogames' });
+
+PlatformsModel.hasMany(PlatformGameModel);
+PlatformGameModel.belongsTo(PlatformsModel);
+
+VideoGamesModel.hasMany(PlatformGameModel);
+PlatformGameModel.belongsTo(VideoGamesModel)
 // Product.hasMany(Reviews);
 
 module.exports = {
