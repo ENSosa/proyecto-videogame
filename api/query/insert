@@ -1,22 +1,29 @@
-INSERT INTO public."Videogames" (
-    name,
-    id,
-    description,
-    platforms,
-    image,
-    released,
-    rating,
-    "createdAt",
-    "updatedAt"
-) VALUES (
-     'Ejemplo Juego',
-     '550e8400-e29b-41d4-a716-446655440000',
-     'Descripción del juego',
-    'Plataformas disponibles',
-     'ruta/a/la/imagen.jpg',
-     '2023-01-01',
-     4.5,
-     CURRENT_TIMESTAMP,
-     CURRENT_TIMESTAMP
-);
-	 BASE DE DATOOOOS!!!!
+//INSERT INTO public."Videogames" (
+  //  name,
+    //id,
+ //   description,
+ //   platforms, 
+ //   image,
+   // released,
+  //  rating,
+    //"createdAt",
+   // "updatedAt"
+//) VALUES (
+  //   'Ejemplo Juego',
+    // '550e8400-e29b-41d4-a716-446655440000',
+     //'Descripción del juego',
+   // 'Plataformas disponibles',
+     //'ruta/a/la/imagen.jpg',
+    // '2023-01-01',
+     //4.5,
+    // CURRENT_TIMESTAMP,
+    // CURRENT_TIMESTAMP
+//);
+	// BASE DE DATOOOOS!!!!
+
+
+
+
+
+
+     
