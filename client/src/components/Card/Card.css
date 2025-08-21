@@ -1,0 +1,36 @@
+.card {
+    width: 220px;
+    background-color: #1f2937;
+    /* fondo oscuro */
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #f3f4f6;
+    /* texto claro */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+}
+
+.card-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 10px 0 5px 0;
+    color: #e5e7eb;
+}
+
+.card-genres {
+    font-size: 14px;
+    color: #9ca3af;
+}
